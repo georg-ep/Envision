@@ -12,6 +12,10 @@ export default {
       type: String,
       default: "none",
     },
+    fontWeight: {
+      type: String,
+      default: "400",
+    },
     background: {
       type: String,
       default: "white",
@@ -49,6 +53,7 @@ export default {
         height: this.height,
         "font-size": this.fontSize,
         color: this.textColour,
+        "font-weight": this.fontWeight,
         width: this.width,
         "border-radius": this.borderRadius,
       };

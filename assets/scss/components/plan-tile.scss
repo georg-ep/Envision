@@ -1,0 +1,40 @@
+.plan-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px var(--primary1);
+  padding: 24px 16px;
+  width: fit-content;
+  width: 300px;
+  transition: 0.15s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 20px 5px var(--primary1);
+    cursor: pointer;
+    border: none;
+
+    .button-wrapper {
+      background: var(--primary2) !important;
+      color: black !important;
+    }
+  }
+
+  .name {
+    font-size: 50px;
+    margin-bottom: 8px;
+  }
+
+  .price {
+    color: var(--primary2);
+    margin-bottom: 12px;
+    font-size: 30px;
+  }
+
+  .feature {
+    font-size: 20px;
+    text-align: center;
+    color: rgba($color: white, $alpha: 0.8);
+  }
+}

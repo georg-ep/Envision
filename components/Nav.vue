@@ -1,86 +1,38 @@
 <template>
-  <div>
-    <Banner />
-    <div class="menu" :class="showMenu ? 'menu_show' : 'menu_hide'">
-      <div
-        v-for="(item, index) in navItems"
-        :key="`item_${index}`"
-        class="menu_item"
-        @click="navRoute(item)"
-      >
-        {{ item.label }}
-      </div>
-      <div class="flex center nav-auth">
-        <Button
-          class="mr-8"
-          :text="'Login'"
-          :height="'30px'"
-          :text-colour="'white'"
-          :background="'transparent'"
-          :border="'1px solid white'"
-          @click="showAuth('login')"
-        />
-        <Button
-          :text="'Sign up'"
-          :height="'30px'"
-          @click="showAuth('register')"
-        />
-      </div>
-      <div class="flex center w-100 mt-24">
-        <img class="cart" src="~/assets/icons/white-shopping-cart.svg" alt="" />
-      </div>
-    </div>
+  <div id="nav">
     <div class="nav" :class="{ 'nav_fill-bg': showMenu }" :style="navStyles">
       <div class="flex space-between links container align-center">
         <div class="flex align-center">
-          <img
+          <!-- <img
             @click="showMenu = !showMenu"
             class="burger-menu hide-desktop pointer"
             :src="burgerSource"
             alt=""
-          />
-          <img
-            class="logo pointer"
-            src="~/assets/images/logo.jpeg"
-            alt="logo"
-          />
-          <div class="flex hide-mobile">
-            <div
-              @click="$router.push(`/${item.route}`)"
-              class="item pointer flex"
-              v-for="(item, index) in navItems"
-              :key="`item_${index}`"
-            >
-              <div
-                class="nav-link"
-                v-if="!item.links"
-                :class="{ selected: isSelected(item) }"
-              >
-                {{ item.label }}
-              </div>
-              <DropdownLink v-else :item="item" />
-            </div>
-          </div>
+          /> -->
+          <div class="logo flex align-center center"><div>EnVision</div></div>
         </div>
-        <div class="flex center nav-auth hide-mobile">
+        <div class="flex hide-mobile">
+          <div
+            @click="$router.push(`/${item.route}`)"
+            class="item pointer flex"
+            v-for="(item, index) in navItems"
+            :key="`item_${index}`"
+          >
+            <div
+              class="nav-link"
+              v-if="!item.links"
+              :class="{ selected: isSelected(item) }"
+            >
+              {{ item.label }}
+            </div>
+            <DropdownLink v-else :item="item" />
+          </div>
           <Button
-            class="mr-8"
-            :text="'Login'"
-            :height="'30px'"
-            :text-colour="'white'"
-            :background="'transparent'"
-            :border="'1px solid white'"
-            @click="showAuth('login')"
-          />
-          <Button
-            :text="'Sign up'"
-            :height="'30px'"
-            @click="showAuth('register')"
-          />
-          <img
-            class="cart"
-            src="~/assets/icons/white-shopping-cart.svg"
-            alt=""
+            :text="'Lets Talk'"
+            :background="'var(--primary2)'"
+            :height="'35px'"
+            :font-size="'18px'"
+            :font-weight="'bold'"
           />
         </div>
       </div>
@@ -103,44 +55,17 @@ export default {
       showMenu: false,
       navItems: [
         {
-          label: "Home",
+          label: "What we do",
           route: "",
           name: "index",
         },
         {
-          label: "Shop",
-          route: "shop",
-          name: "shop",
-          links: [
-            {
-              label: "Jivana Spices",
-            },
-            {
-              label: "Jivana Spice Blends",
-            },
-            {
-              label: "Pulses Lentils & Rice",
-            },
-            {
-              label: "Jivana Lentil Boxes",
-            },
-            {
-              label: "Gifts Coming Soon",
-            },
-          ],
+          label: "Our Work",
+          route: "contact",
+          name: "contact",
         },
         {
-          label: "Our Story",
-          route: "our-story",
-          name: "story",
-        },
-        {
-          label: "Eco",
-          route: "eco",
-          name: "eco",
-        },
-        {
-          label: "Contact",
+          label: "About Us",
           route: "contact",
           name: "contact",
         },
@@ -158,7 +83,7 @@ export default {
       };
 
       if (this.absolute) {
-        styles.position = "absolute";
+        styles.position = "fixed";
         styles.background = "rgba($color: black, $alpha: 0.5)";
       }
 

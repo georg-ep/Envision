@@ -4,7 +4,7 @@ html, body {
   font-family: "Space Grotesk";
   color: white;
   overflow-x: hidden !important;
-  background: rgba($color: #617C67, $alpha: 0.2);
+  background: black;
 }
 
 div {
@@ -17,13 +17,15 @@ input, textarea {
 
 :root {
   // --primary: pink;
-  --primary: #0074D9;
+  --primary1: rgb(93, 0, 254);
+  --primary2: rgb(0, 190, 254);
+
+  --btn-primary: #0074D9;
+  
   --success: #008000;
   --error: red;
-  --secondary: #a3a3a3;
+  --secondary: #c2c0c0;
   
-  --blue: rgb(82, 82, 255);
-
   --box-shadow-dark: black;
   --box-shadow-light: rgb(238, 238, 238);
 

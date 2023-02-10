@@ -1,103 +1,101 @@
 .landing {
-  .cover-image {
-    width: 100vw;
+  background: black;
+
+  .section {
+    z-index: 10;
     height: 100vh;
-    position: absolute;
-    z-index: 1;
-    filter: brightness(30%);
-    background-image: url("@/assets/images/landing-spices.jpeg");
+    color: white;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .plans {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .subheading  {
+    font-size: 30px;
+    color: rgba($color: white, $alpha: 0.7);
+    font-weight: bold;
 
     @media (max-width: 1150px) {
-      height: 100vh;
+      text-align: center;
+      font-size: 16px;
     }
   }
 
-  .landing-container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .button-bottom {
+    @media (max-width: 1150px) {
+      align-self: center;
+      justify-self: center;
+    }
+  }
 
-    .search-field {
-      width: 50%;
+  .title {
+    font-size: 64px;
+    background: linear-gradient(to right, var(--primary1) 20%, var(--primary2) 40%, var(--primary2) 60%, var(--primary1) 80%);
+    background-size: 200% auto;
+    font-weight: bold;
+    
+    color: #000;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
-      @media (max-width: 600px) {
-        width: 100%;
+    @media (max-width: 1150px) {
+      font-size: 24px;
+      text-align: center;
+    }
+    
+    animation: shine 3s linear infinite;
+    @keyframes shine {
+      to {
+        background-position: 200% center;
       }
     }
+  }
 
-    &_content {
-      z-index: 10;
-      width: 100%;
+  .b-container {
+    padding: 24px;
+    width: 500px;
 
-      .catalog {
-        margin-right: 36px;
+    &_coloured {
+      color: var(--primary2);
+    }
+    
+    &:first-child {
+      border: 1px solid rgba($color: white, $alpha: 0.7);
+      margin-right: 36px;
+    }
 
-        .item {
-          display: flex;
-          align-items: center;
-          border: 1px solid transparent;
-          padding: 5px;
-          transition: 0.2s ease-in-out;
+    &:nth-child(2) {
+      border: 1px solid var(--primary2);
+    }
 
-          &:hover {
-            border: 1px solid grey;
-            background: rgba(white, 0.1);
-            border-radius: 2px;
-          }
+    &_title {
+      margin-bottom: 12px;
+      font-size: 24px;
+      font-weight: bold;
+    }
 
-          .label {
-            width: 150px;
-            margin-right: 12px;
-          }
+    &_point {
+      margin-bottom: 16px;
+      color: rgba($color: white, $alpha: 0.7);
+    }
+  }
 
-          &:not(:last-child) {
-            margin-bottom: 24px;
-          }
+  .animate {
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    transform: translate3d(30px, 30px, 0);
 
-          .thumbnail {
-            height: 60px;
-            width: 60px;
-          }
-        }
-      }
-
-      .title {
-        font-size: 72px;
-
-        @media (max-width: 800px) {
-          text-align: center;
-          font-size: 48px;
-        }
-      }
-      
-      .subtitle {
-        font-size: 24px;
-        color: #c4c4c4;
-        @media (max-width: 800px) {
-          text-align: center;
-          font-size: 18px;
-        }
-      }
-
-      .quick-actions {
-        margin-top: 24px;
-        display: flex;
-        align-items: center;
-
-        @media (max-width: 800px) {
-          justify-content: center;
-        }
-
-        .button {
-          &:not(:last-child) {
-            margin-right: 12px;
-          }
-        }
-      }
-
-
+    &_active {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
     }
   }
 }

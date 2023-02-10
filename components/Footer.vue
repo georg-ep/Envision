@@ -2,19 +2,19 @@
   <div class="footer">
     <div class="container">
       <div class="footer-blocks">
-        <div class="block">
+        <!-- <div class="block">
           <div class="heading">Quick Links</div>
           <div class="link">Delivery Information</div>
           <div class="link">Returns & Refunds</div>
           <div class="link">Terms & Conditions</div>
           <div class="link">Privacy Policy</div>
-        </div>
+        </div> -->
         <div class="block">
           <div class="heading">Get In Touch</div>
-          <div class="link">contactus@jivanaspices.co.uk</div>
-          <div class="link">0758 246 2829</div>
+          <div class="link">contactus@envisiondigital.co.uk</div>
+          <div class="link">(+44) 7490730003</div>
         </div>
-        <div class="block">
+        <!-- <div class="block">
           <div class="heading">Newsletter</div>
           <div class="mb-12 subheading">
             Keep up to date with our latest offers, events and promotions
@@ -34,22 +34,11 @@
             :border="'1px solid white'"
             :height="'30px'"
           />
-        </div>
-        <div class="block">
-          <div class="extra">
-            <img
-              class="food-rating"
-              src="~/assets/images/food-rating.jpeg"
-              alt=""
-            />
-            <img class="vegan" src="~/assets/images/vegan.jpeg" alt="" />
-          </div>
-        </div>
+        </div> -->
       </div>
       <div class="flex col w-100 align-center mt-48">
-        <div class="copyright">Copyright © 2022 Jivana Spices</div>
-        <div class="address mb-12">10 Highfield, Wells BA5 3NX in Somerset</div>
-        <div class="flex">
+        <div class="copyright">Copyright © 2022 Envision Digital</div>
+        <!-- <div class="flex">
           <img
             class="payment-icon"
             src="~/assets/icons/payments/amex.svg"
@@ -70,7 +59,7 @@
             src="~/assets/icons/payments/visa.svg"
             alt="visa"
           />
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
